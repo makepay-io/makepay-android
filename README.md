@@ -6,7 +6,7 @@ This SDK is intentionally mobile-safe: it does not accept or store MakePay partn
 
 ## Requirements
 
-- Android Gradle Plugin `9.2.1`
+- Android Gradle Plugin `8.13.2`
 - Kotlin `2.3.21`
 - Android compile SDK `36`
 - Minimum SDK `23`
