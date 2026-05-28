@@ -40,13 +40,11 @@ public object MakePayCheckoutUrls {
             }
             .joinToString("&")
 
-        return URI(
-            resolved.scheme,
-            resolved.authority,
-            resolved.path,
-            queryString.ifBlank { null },
-            null,
-        )
+        if (queryString.isBlank()) {
+            return resolved
+        }
+
+        return URI.create("$resolved?$queryString")
     }
 
     private fun escape(value: String, parameterName: String): String {
