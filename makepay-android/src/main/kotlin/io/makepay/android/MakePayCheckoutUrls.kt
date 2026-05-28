@@ -2,7 +2,6 @@ package io.makepay.android
 
 import java.net.URI
 import java.net.URLEncoder
-import java.nio.charset.StandardCharsets
 
 public object MakePayCheckoutUrls {
     public fun hostedPaymentUrl(
@@ -53,6 +52,7 @@ public object MakePayCheckoutUrls {
     }
 
     private fun encode(value: String): String {
-        return URLEncoder.encode(value, StandardCharsets.UTF_8).replace("+", "%20")
+        @Suppress("DEPRECATION")
+        return URLEncoder.encode(value, "UTF-8").replace("+", "%20")
     }
 }
